@@ -1,14 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import ListHeaders from "./headers";
-import ListItem from "./item";
+import ListHeaders from './headers';
+import ListItem from './item';
 
-import "./styles.css";
+import './styles.css';
 
 class ListComponent extends React.Component {
   static propTypes = {
-    data: PropTypes.array.isRequired
+    data: PropTypes.array.isRequired,
   };
 
   render() {
