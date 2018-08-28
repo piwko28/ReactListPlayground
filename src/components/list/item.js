@@ -1,7 +1,7 @@
 import React from "react";
 
 const ListItem = props => (
-  <tr key="item.id">
+  <tr>
     <td>{props.data.firstName}</td>
     <td>{props.data.lastName}</td>
     <td>{props.data.email}</td>

@@ -18,7 +18,9 @@ class ListComponent extends React.Component {
     return (
       <table>
         <ListHeaders />
-        <tbody>{this.props.data.map(item => <ListItem data={item} />)}</tbody>
+        <tbody>
+          {this.props.data.map(item => <ListItem key={item.id} data={item} />)}
+        </tbody>
       </table>
     );
   }
