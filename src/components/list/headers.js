@@ -1,5 +1,5 @@
-import React from "react";
-import ListHeader from "./header";
+import React from 'react';
+import ListHeader from './header';
 
 const ListHeaders = () => (
   <thead>

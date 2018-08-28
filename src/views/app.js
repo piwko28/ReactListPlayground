@@ -1,33 +1,23 @@
-import React from "react";
-import List from "../components/list";
-import "./app.css";
+import React from 'react';
+
+import List from '../components/list';
+import { API_URL } from '../config/api';
+
+import './app.css';
 
 class AppComponent extends React.Component {
   state = {
-    list: []
+    list: [],
   };
 
   async componentDidMount() {
     this.setState({
-      list: await this.getItems()
+      list: await this.getItems(),
     });
   }
 
   async getItems() {
-    return Promise.resolve([
-      {
-        id: 1,
-        firstName: "John",
-        lastName: "Doe",
-        email: "john@doe.com"
-      },
-      {
-        id: 2,
-        firstName: "Jane",
-        lastName: "Doe",
-        email: "jane@doe.com"
-      }
-    ]);
+    return fetch(`${API_URL}/people`).then(response => response.json());
   }
 
   render() {
