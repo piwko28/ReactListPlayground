@@ -1,14 +1,16 @@
 import React from 'react';
+import { translate } from 'react-i18next';
+
 import ListHeader from './header';
 
-const ListHeaders = () => (
+const ListHeaders = ({ t }) => (
   <thead>
     <tr>
-      <ListHeader text="First name" />
-      <ListHeader text="Last name" />
-      <ListHeader text="E-mail address" />
+      <ListHeader text={t('header.first-name')} />
+      <ListHeader text={t('header.last-name')} />
+      <ListHeader text={t('header.email')} />
     </tr>
   </thead>
 );
 
-export default ListHeaders;
+export default translate('list')(ListHeaders);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { translate } from 'react-i18next';
 
 import List from '../components/list';
 import { API_URL } from '../config/api';
@@ -21,13 +22,14 @@ class AppComponent extends React.Component {
   }
 
   render() {
+    const { t } = this.props;
     return (
       <div className="app">
-        <h1>People list</h1>
+        <h1>{t('title')}</h1>
         <List data={this.state.list} />
       </div>
     );
   }
 }
 
-export default AppComponent;
+export default translate('app')(AppComponent);
