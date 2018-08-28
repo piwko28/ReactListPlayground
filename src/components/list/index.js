@@ -1,19 +1,20 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { translate } from 'react-i18next';
 
-import ListHeaders from "./headers";
-import ListItem from "./item";
+import ListHeaders from './headers';
+import ListItem from './item';
 
-import "./styles.css";
+import './styles.css';
 
 class ListComponent extends React.Component {
   static propTypes = {
-    data: PropTypes.array.isRequired
+    data: PropTypes.array.isRequired,
   };
 
   render() {
     if (!this.props.data) {
-      return <p>No data found</p>;
+      return <p>{t('no-data')}</p>;
     }
     return (
       <table>
@@ -26,4 +27,4 @@ class ListComponent extends React.Component {
   }
 }
 
-export default ListComponent;
+export default translate('list')(ListComponent);
