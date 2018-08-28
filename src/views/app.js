@@ -3,12 +3,9 @@ import List from "../components/list";
 import "./app.css";
 
 class AppComponent extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      list: []
-    };
-  }
+  state = {
+    list: []
+  };
 
   async componentDidMount() {
     this.setState({
