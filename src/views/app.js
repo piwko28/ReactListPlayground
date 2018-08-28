@@ -1,35 +1,50 @@
-import React from 'react';
-import { translate } from 'react-i18next';
+import React from "react";
+import { translate } from "react-i18next";
 
-import List from '../components/list';
-import { API_URL } from '../config/api';
+import List from "../components/list";
+import { API_URL } from "../config/api";
 
-import './app.css';
+import "./app.css";
 
 class AppComponent extends React.Component {
   state = {
     list: [],
+    loading: false
   };
 
   async componentDidMount() {
     this.setState({
-      list: await this.getItems(),
+      list: await this.getItems()
     });
   }
 
   async getItems() {
-    return fetch(`${API_URL}/people`).then(response => response.json());
+    this.setLoading(true);
+    return fetch(`${API_URL}/people`).then(response => {
+      this.setLoading(false);
+      return response.json();
+    });
+  }
+
+  setLoading(loading) {
+    this.setState({
+      loading
+    });
   }
 
   render() {
     const { t } = this.props;
     return (
       <div className="app">
-        <h1>{t('title')}</h1>
-        <List data={this.state.list} />
+        <h1>{t("title")}</h1>
+        {this.state.loading ? (
+          <span>{t("loading")}</span>
+        ) : (
+          <List data={this.state.list} />
+        )}
       </div>
     );
   }
 }
 
-export default translate('app')(AppComponent);
+export default translate("app")(AppComponent);
