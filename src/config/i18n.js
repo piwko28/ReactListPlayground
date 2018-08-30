@@ -3,8 +3,9 @@ import i18n from 'i18next';
 i18n.init({
   resources: {
     en: {
-      app: {
-        title: 'People list',
+      people: {
+        'list.title': 'People list',
+        'add.title': 'Add person',
       },
       list: {
         'no-data': 'No data found',
