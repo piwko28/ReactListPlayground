@@ -34,7 +34,7 @@ class PeopleComponent extends Component {
     const { t } = this.props;
     return (
       <div className='app'>
-        <h1>{t('title')}</h1>
+        <h1>{t('list.title')}</h1>
         {this.state.loading ? (
           <span>{t('loading')}</span>
         ) : (
