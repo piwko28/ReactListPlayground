@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { I18nextProvider } from 'react-i18next';
 
-import App from './views/app';
+import App from './layout/app';
 import i18n from './config/i18n';
 
 const rootElement = document.getElementById('root');

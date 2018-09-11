@@ -1,12 +1,10 @@
-import React from "react";
-import { translate } from "react-i18next";
+import React, { Component } from 'react';
+import { translate } from 'react-i18next';
 
-import List from "../components/list";
-import { API_URL } from "../config/api";
+import List from '../../components/list';
+import { API_URL } from '../../config/api';
 
-import "./app.css";
-
-class AppComponent extends React.Component {
+class PeopleComponent extends Component {
   state = {
     list: [],
     loading: false
@@ -35,10 +33,10 @@ class AppComponent extends React.Component {
   render() {
     const { t } = this.props;
     return (
-      <div className="app">
-        <h1>{t("title")}</h1>
+      <div className='app'>
+        <h1>{t('title')}</h1>
         {this.state.loading ? (
-          <span>{t("loading")}</span>
+          <span>{t('loading')}</span>
         ) : (
           <List data={this.state.list} />
         )}
@@ -47,4 +45,4 @@ class AppComponent extends React.Component {
   }
 }
 
-export default translate("app")(AppComponent);
+export default translate('people')(PeopleComponent);

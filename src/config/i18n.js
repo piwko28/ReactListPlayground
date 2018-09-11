@@ -3,9 +3,10 @@ import i18n from "i18next";
 i18n.init({
   resources: {
     en: {
-      app: {
-        title: "People list",
-        loading: "Loading..."
+      people: {
+        'list.title': 'People list',
+        'add.title': 'Add person',
+        'loading': 'Loading...',
       },
       list: {
         "no-data": "No data found",
